@@ -10,3 +10,7 @@ What I want for my setup:
 * Setup Java Development
 * Setup Go Development
 * Use Flakes
+
+# Applying changes
+
+`sudo nixos-rebuild switch --flake /path/to/this/repo#laptop`
