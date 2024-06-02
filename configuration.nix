@@ -10,8 +10,8 @@
       ./hardware-configuration.nix
       ./environment.nix
       ./docker.nix
-      <home-manager/nixos>
-      ./home-manager/home-manager.nix
+      #<home-manager/nixos>
+      #./home-manager/home-manager.nix
     ];
 
   # Bootloader.
@@ -91,7 +91,7 @@
     description = "Chris";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
-    #  thunderbird
+      #thunderbird
     ];
     shell = pkgs.fish;
   };

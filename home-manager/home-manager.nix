@@ -20,7 +20,7 @@
     
     programs.neovim = {
         plugins = [
-            { name = "LazyVim"; src =pkgs.vimPlugins.LazyVim; }
+            { name = "LazyVim"; src = pkgs.vimPlugins.LazyVim; }
 	];
     };
 
