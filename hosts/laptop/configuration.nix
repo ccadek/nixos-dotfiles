@@ -8,8 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./environment.nix
-      ./docker.nix
+      ../../environment.nix
+      ../../docker.nix
       #<home-manager/nixos>
       #./home-manager/home-manager.nix
     ];
