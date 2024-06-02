@@ -11,7 +11,7 @@
       ../../environment.nix
       ../../docker.nix
       #<home-manager/nixos>
-      #./home-manager/home-manager.nix
+      #../../home-manager/home-manager.nix
     ];
 
   # Bootloader.
