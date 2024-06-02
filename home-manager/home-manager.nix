@@ -50,16 +50,16 @@
         set -U hydro_symbol_git_dirty " ✗"
       '';
       plugins = [
-        { name = "autopair"; src = pkgs.fishPlugins.autopair; }
-	{ name = "hydro"; src = pkgs.fishPlugins.hydro; }
-	{ name = "forgit"; src = pkgs.fishPlugins.forgit; }
+        { name = "autopair"; src = pkgs.fishPlugins.autopair.src; }
+        { name = "hydro"; src = pkgs.fishPlugins.hydro.src; }
+        { name = "forgit"; src = pkgs.fishPlugins.forgit.src; }
 	{
           name = "Useful-Fish-Functions";
 	  src = pkgs.fetchFromGitHub {
             owner = "ccadek";
 	    repo = "Useful-Fish-Functions";
-	    rev = "b53e6258ac7e11fc269433f9b21fb6d9607df2f3";
-	    sha256 = "sha256-ijRYfLtU69Cgft7GxPJJiNwoo9BWYOoihExmg+YQON8=";
+	    rev = "0ebc5775307888111bef80851d30cd2517f1c92a";
+	    sha256 = "sha256-vF4q0EwVbHuLq8xt6WdtBwQ+NdyHo7myN/8aDfwIDzI=";
 	  };
 	}
         { 
