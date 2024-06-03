@@ -10,7 +10,6 @@
       ./hardware-configuration.nix
       ../../environment.nix
       ../../docker.nix
-      #../../home/chris.nix
     ];
 
   # Bootloader.
