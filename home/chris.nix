@@ -1,10 +1,15 @@
 { config, pkgs, ... }:
 {
-  home-manager.backupFileExtension = "bk";
+  #home-manager.nixosModules.home-manager.backupFileExtension = "bk";
+  #home-manager.backupFileExtension = "bk";
 
-  home-manager.users.chris = {
+  #home-manager.nixosModules.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  #home-manager.inputs.nixpkgs.follows = "nixpkgs";
+  #home-manager.nixosModules.home-manager.users.chris = {
+  #home-manager.users.chris = {
     /* The home.stateVersion option does not have a default and must be set */
     home.stateVersion = "24.05";
+    #inputs.nixpkgs.follows = "nixpkgs";
     /* Here goes the rest of your home-manager config, e.g. home.packages = [ pkgs.foo ]; */
     home.packages = [ 
       pkgs.fish
@@ -20,7 +25,7 @@
     
     programs.neovim = {
         plugins = [
-            { name = "LazyVim"; src = pkgs.vimPlugins.LazyVim; }
+            { name = "LazyVim"; src = pkgs.vimPlugins.LazyVim.src; }
 	];
     };
 
@@ -83,5 +88,5 @@
       ];
     };
 
-  };
+  #};
 }

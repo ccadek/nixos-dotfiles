@@ -3,8 +3,10 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.05";
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
 
@@ -13,6 +15,12 @@
       system = "x86_64-linux";
       modules = [
         ./hosts/laptop/configuration.nix
+        home-manager.nixosModules.home-manager {
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.backupFileExtension = "bk";
+	  home-manager.users.chris = import ./home/chris.nix;
+	}
       ];
     };
   };
