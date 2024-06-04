@@ -4,7 +4,7 @@
   home.stateVersion = "24.05";
   #inputs.nixpkgs.follows = "nixpkgs";
   /* Here goes the rest of your home-manager config, e.g. home.packages = [ pkgs.foo ]; */
-  home.packages = [ 
+  home.packages = [
     pkgs.fish
     pkgs.fzf
     pkgs.pyenv
@@ -15,12 +15,12 @@
     userName = "cc";
     userEmail = "purzelification@gmail.com";
   };
-    
+
   programs.neovim = {
-      plugins = [
-          { name = "LazyVim"; src = pkgs.vimPlugins.LazyVim.src; }
-      ];
-    };
+    plugins = [
+      { name = "LazyVim"; src = pkgs.vimPlugins.LazyVim.src; }
+    ];
+  };
 
   programs.fish = {
     enable = true;
@@ -60,22 +60,22 @@
           sha256 = "sha256-vF4q0EwVbHuLq8xt6WdtBwQ+NdyHo7myN/8aDfwIDzI=";
         };
       }
-      { 
+      {
         name = "wd";
         src = pkgs.fetchFromGitHub {
           owner = "fischerling";
           repo = "plugin-wd";
           rev = "ac46fb36724fa17d97965f9829ae29c61ec1e109";
-	  sha256 = "sha256-pRTEU9T+WkFxTdeZR1EZgW9FCeBsb3VbUvwFD27ZkZ4=";
+          sha256 = "sha256-pRTEU9T+WkFxTdeZR1EZgW9FCeBsb3VbUvwFD27ZkZ4=";
         };
       }
       {
         name = "nvm";
         src = pkgs.fetchFromGitHub {
-           owner = "jorgebucaran";
-	   repo = "nvm.fish";
-           rev = "b8edb1ee24cbbf7259196b0cb3c6c4ab65b07929";
-           sha256 = "sha256-7JxIQSseBv81SSpWH1pufx8fh9EQhbo3r2nVVREwc58=";
+          owner = "jorgebucaran";
+          repo = "nvm.fish";
+          rev = "b8edb1ee24cbbf7259196b0cb3c6c4ab65b07929";
+          sha256 = "sha256-7JxIQSseBv81SSpWH1pufx8fh9EQhbo3r2nVVREwc58=";
         };
       }
     ];
