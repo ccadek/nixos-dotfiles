@@ -10,6 +10,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../defaults.nix
+      ../../apps/desktop/gnome.nix
       ../../environment.nix
       ../../docker.nix
     ];
@@ -25,11 +26,6 @@
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  programs.dconf.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
