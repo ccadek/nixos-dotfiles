@@ -11,7 +11,6 @@
       ./hardware-configuration.nix
       ../defaults.nix
       ../../apps/desktop/gnome.nix
-      ../../environment.nix
       ../../docker.nix
     ];
 

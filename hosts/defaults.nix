@@ -48,6 +48,11 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  environment.variables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
+  };
+
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
