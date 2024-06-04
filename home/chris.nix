@@ -56,8 +56,8 @@
         src = pkgs.fetchFromGitHub {
           owner = "ccadek";
           repo = "Useful-Fish-Functions";
-          rev = "0ebc5775307888111bef80851d30cd2517f1c92a";
-          sha256 = "sha256-vF4q0EwVbHuLq8xt6WdtBwQ+NdyHo7myN/8aDfwIDzI=";
+          rev = "a73f032bee9778e771e05a6fcfaabc86a93863dd";
+          sha256 = "sha256-/I3vfYUM7vvOOk5C3ryiEJwpEMy5fgUA/z33dXDojNo=";
         };
       }
       {
