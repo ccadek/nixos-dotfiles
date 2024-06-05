@@ -11,6 +11,7 @@
       ./hardware-configuration.nix
       ../defaults.nix
       ../../apps/desktop/gnome.nix
+      ../../apps/editor/neovim.nix
       ../../docker.nix
     ];
 
@@ -59,7 +60,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    pkgs.neovim
     pkgs.git
     pkgs.openssl
     pkgs.jdk17

@@ -16,12 +16,6 @@
     userEmail = "purzelification@gmail.com";
   };
 
-  programs.neovim = {
-    plugins = [
-      { name = "LazyVim"; src = pkgs.vimPlugins.LazyVim.src; }
-    ];
-  };
-
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -36,7 +30,7 @@
       # used to install docker-compose manually
       # check https://docs.docker.com/compose/install/linux/
       set -gx DOCKER_CONFIG "$HOME/.docker"
-        
+
       # initialize pyenv
       pyenv init - | source
 
