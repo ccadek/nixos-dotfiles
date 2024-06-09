@@ -1,4 +1,14 @@
 { config, pkgs, ... }:
+let
+  fromGitHub = ref: repo: pkgs.vimUtils.buildVimPlugin {
+    pname = "${lib.strings.sanitizeDerivationName repo}";
+    version = ref;
+    src = builtins.fetchGit {
+      url = "https://github.com/${repo}.git";
+      ref = ref;
+    };
+  };
+in
 {
   /* The home.stateVersion option does not have a default and must be set */
   home.stateVersion = "24.05";
@@ -15,24 +25,16 @@
     userName = "cc";
     userEmail = "purzelification@gmail.com";
   };
-  
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
     vimDiffAlias = true;
-    plugins = pkgs.vimPlugins; {
-    {
-      name = "vim-sleuth";
-          src = pkgs.fetchFromGitHub {
-            owner = "tpope";
-            repo = "vim-sleuth";
-            rev = "1d25e8e5dc4062e38cab1a461934ee5e9d59e5a8";
-            sha256 = "sha256-mnV5UgDN9ZySG7kqZHxRQ8s7Yc0u9tVdwVUwmeoHadk=";
-          };
-	  };
-    };
+    plugins = [
+      (fromGitHub "v2.0" "tpope/vim-sleuth")
+    ];
   };
 
   programs.fish = {
