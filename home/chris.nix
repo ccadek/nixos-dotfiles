@@ -1,14 +1,4 @@
 { config, pkgs, ... }:
-let
-  fromGitHub = ref: repo: pkgs.vimUtils.buildVimPlugin {
-    pname = "${lib.strings.sanitizeDerivationName repo}";
-    version = ref;
-    src = builtins.fetchGit {
-      url = "https://github.com/${repo}.git";
-      ref = ref;
-    };
-  };
-in
 {
   /* The home.stateVersion option does not have a default and must be set */
   home.stateVersion = "24.05";
@@ -31,9 +21,7 @@ in
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
-    vimDiffAlias = true;
     plugins = [
-      (fromGitHub "v2.0" "tpope/vim-sleuth")
     ];
   };
 
